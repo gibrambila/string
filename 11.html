@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let garrafa = {
+    material: "Vidro",
+    capacidade: 500,
+    cor: "Transparente",
+    cheia: false,
+    liquidoAtual: 0,
+
+    tampa: {
+        tipo: "Rosca",
+        fechada: true
+    },
+
+    encher: function(quantidade) {
+        if (this.liquidoAtual + quantidade >= this.capacidade) {
+            this.liquidoAtual = this.capacidade;
+            this.cheia = true;
+        } else {
+            this.liquidoAtual += quantidade;
+        }
+        console.log(`Líquido: ${this.liquidoAtual} ml`);
+    },
+
+    esvaziar: function() {
+        this.liquidoAtual = 0;
+        this.cheia = false;
+        console.log("A garrafa está vazia.");
+    },
+
+    abrirTampa: function() {
+        this.tampa.fechada = false;
+        console.log("Tampa aberta.");
+    },
+
+    alterarCor: function(novaCor) {
+        this.cor = novaCor;
+        console.log(`Cor: ${this.cor}`);
+    }
+};
+
+    </script>
+    
+</body>
+</html>
